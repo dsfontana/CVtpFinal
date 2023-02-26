@@ -1,0 +1,25 @@
+body
+{
+    color: black;
+    background-color: whitesmoke;
+}
+
+.datos
+{
+    color:rgb(68, 68, 131);
+}
+
+.titulos
+{
+    color:rgba(37, 37, 107, 0.932); 
+}
+
+#tablaizquierda
+{
+    background-color: rgb(240, 229, 229)
+}
+
+ #tabladerecha
+ {
+    background-color: rgb(219, 212, 212)
+ }

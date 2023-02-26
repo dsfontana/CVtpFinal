@@ -1,0 +1,29 @@
+Body
+{
+    color: white;
+    background-color: #333;
+}
+
+.datos
+{
+    color: #b1d2ec7e;
+}
+
+.titulos
+{
+    color:rgba(158, 158, 236, 0.932); 
+}
+
+#tablaizquierda
+{
+    background-color: rgb(107, 106, 106)
+}
+
+h2
+{
+    text-align: left;
+    color: rgb(155, 155, 209);
+    /*background-color: rgb(89, 91, 97);*/
+    font-family:  'RobotoI', sans-serif ; 
+    font-size: 30px;
+}
