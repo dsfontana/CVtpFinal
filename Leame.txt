@@ -1,0 +1,7 @@
+
+Primer entrega del proyecto final.
+Se ha realizado con recursos aprendidos en el curso, e investigación sobre temas específicos, por ejemplo el uso de archivos json, 
+el uso de fuentes locales en vez de fuentes remotas a manera de investigación de como tenerlas localmente, efecto dia noche con cambios en hoja de estilos, 
+efecto con utilización de javascript, icono en pestaña, etc
+
+Diego Fontana
