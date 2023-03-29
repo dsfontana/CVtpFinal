@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/fuentes.css"> <!--fuentes locales-->
+    <link rel="stylesheet" href="css/dia.css" class="tema">
+    <link rel="icon" type="image/x-icon" href="imagenes/icononav.ico">
+    <title>Visualizador de Curriculums</title>
+</head>
+
+<body>
+   
+    <div height=10% class="header">
+        <p align="right">
+            <abbr title="Cambiar Dia - Noche">
+                <label align="right" class="switch">
+                    <input type="checkbox" class='checkbox' align="right">
+                    <span class="slider round"></span>
+                </label>
+            </abbr>
+        </p>
+    </div>
+ 
+        <h1 align="center" id="Nombre1">  </h1> 
+   
+<section>
+    
+    <table>
+        <td style="width:35%" id="tablaizquierda">
+        <div>        
+            <h2 padding-top=0px>Datos Personales:</h2>
+            <img src="" id="Foto">
+            
+            <br>
+            <l align="left" class="titulos">Nombre: </l>
+            <l class="datos" id="Nombre"></l>
+            <br>
+            <l align="left" class="titulos">Fecha de nac.: </l>
+            <l class="datos" id="Fechanac"> </l>
+            <br>
+            <l align="left" class="titulos">Edad: </l>
+            <l class="datos" id="Edad"> </l>
+            <br>
+            <l align="left" class="titulos">Dirección: </l>
+            <l class="datos" id="Direccion"> </l>
+            <br>
+            <l align="left" class="titulos">Ciudad: </l>
+            <l class="datos" id="Ciudad"> </l>
+            <br>
+            <l align="left" class="titulos">Provincia: </l>
+            <l class="datos" id="Provincia"> </l>
+            <br>
+            <l align="left" class="titulos">Pais: </l>
+            <l class="datos" id="Pais"> </l>
+            <br>
+            <l align="left" class="titulos">Codigo Postal: </l>
+            <l class="datos" id="CodigoPostal"> </l>
+            <br>
+            <l align="left" class="titulos">Telefono: </l>
+            <l class="datos" id="Telefono"> </l>
+            <br>
+            <l align="left" class="titulos">Email: </l>
+            <l class="datos" id="Email"> </l> 
+            <br><br><br><br><br><br><br><br>
+        </div>
+            </td>
+        
+            <td id="tabladerecha">
+                
+                <h2>Formación Académica:</h2>
+                <l align="left" class="titulos"> Año: </l>
+                <l align="left" class="datos"> 2002 </l>
+                <br>
+                <l align="left" class="titulos"> Titulo: </l>
+                <l align="left" class="datos"> Técnico en Marketing - Universidad Nacional del Litoral                          </l>
+                <br><br>    
+                <l align="left" class="titulos"> Año: </l>
+                <l align="left" class="datos"> 2003 </l>
+                <br>
+                <l align="left" class="titulos"> Titulo: </l>
+                <l align="left" class="datos"> Tecnico Electrónico - Universidad Tecnológica Nacional </l>
+
+                <br><br>    
+                <l align="left" class="titulos"> Año: </l>
+                <l align="left" class="datos"> 2004 </l>
+                <br>
+                <l align="left" class="titulos"> Titulo: </l>
+                <l align="left" class="datos"> Ingeniería ELectronica - Universidad Tecnológica Nacional - Cursado completo hasta 5° año actualmente realizando la tesis final</l>
+                <br>
+                <h2>Experiencia Laboral:</h2>
+                <l align="left" class="titulos"> Año: </l>
+                <l align="left" class="datos"> 2000 - 2003 </l>
+                <br>
+                <l align="left" class="titulos"> Tareas Realizadas: </l>
+                <l align="left" class="datos"> Monotributista </l>
+                <br><br>
+                <l align="left" class="titulos"> Año: </l>
+                <l align="left" class="datos"> 2002 - Actualidad </l>
+                <br>
+                <l align="left" class="titulos"> Tareas Realizadas: </l>
+                <l align="left" class="datos"> Análista Técnico - Empresa IBM </l>
+                <br><br><br><br><br><br>         
+             </td>
+        
+    </table>
+</section>
+
+<br>
+<br>
+   
+<div id="footer" class="datos" align="center">
+        <l>Alumno: Diego S. Fontana</l> 
+        <br>
+        <l>Fecha de entrega: 26/02/2023</l> 
+</div>
+
+    <script>
+        const persona = fetch('https://randomuser.me/api/')
+        .then(response => response.json())
+        .then(data => {
+        //console.log(data)
+            const dato = JSON.stringify(data)
+            console.log(dato)
+             
+            const foto = document.getElementById('Foto')
+            foto.src = data.results[0].picture.large;
+            document.getElementById('Nombre1').innerText = data.results[0].name.first + " " + data.results[0].name.last 
+            document.getElementById('Nombre').innerText = data.results[0].name.first + " " + data.results[0].name.last 
+            document.getElementById('Fechanac').innerText =data.results[0].dob.date
+            document.getElementById('Edad').innerText = data.results[0].dob.age
+            document.getElementById('Direccion').innerText = data.results[0].location.street.number + ", " + data.results[0].location.street.name
+            document.getElementById('Ciudad').innerText = data.results[0].location.city
+            document.getElementById('Provincia').innerText =  data.results[0].location.state
+            document.getElementById('Pais').innerText = data.results[0].location.country
+            document.getElementById('CodigoPostal').innerText = data.results[0].location.postcode
+            document.getElementById('Telefono').innerText = data.results[0].phone
+            document.getElementById('Email').innerText = data.results[0].email
+        });
+   
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="funciones.js"></script>
+
+</body>
+</html>
